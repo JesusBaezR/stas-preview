@@ -19,7 +19,6 @@ body{
     display: flex;
     min-height: 80vh;
     width: 375px;
-    max-width: 95vw;
     justify-content: center;
     background-color: hsl(244, 38%, 16%);
     border-radius: 10px;
@@ -42,7 +41,7 @@ body{
     width: 100%;
     border-radius: 10px 10px 0 0;
     object-fit: fill;
-    filter: opacity(.5) drop-shadow(0 0 0 hsl(280, 100%, 30%) ) drop-shadow(0 0 0 hsl(280, 100%, 30%) )drop-shadow(0 0 0 hsl(280, 100%, 30%) ) ;
+    filter: opacity(.5) drop-shadow(0 0 0 hsl(280, 100%, 30%)) drop-shadow(0 0 0 hsl(280, 100%, 30%) )drop-shadow(0 0 0 hsl(280, 100%, 30%)) ;
 }
 
 .items__text{
@@ -60,7 +59,7 @@ body{
     row-gap: 10px;
     padding: 30px;
     text-align: center;
-    line-height: 10px;
+    /* line-height: 10px; */
     font-family: 'Lexend Deca', sans-serif;
     color: hsla(0, 0%, 100%, 0.40) ;
 }
@@ -85,11 +84,86 @@ body{
     color: rgb(175, 116, 231);
 }
 
+ /* desktop */
+.desktop{
+    display: none;
+}
 
-
-/* @media (min-width: 600px){
+@media (min-width: 600px) and (max-width:1000px) {
     .content{
         width: 90vw;
+        display: flex;
     }
-} */
+
+    .items__image{
+        height: 40%;
+        width: 100%;
+    }
+
+    .items__end{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        font-family: 'Lexend Deca', sans-serif;
+        color: hsla(0, 0%, 100%, 0.40) ;
+        padding-bottom: 60px;
+    }
+    
+
+}
+
+@media screen and (min-width: 1000px) {
+   
+    .items__end, .items__text{
+        display: none;
+    }
+
+    .content{
+        display: flex;
+        min-height: 50vh;
+        width: 70vw;
+        justify-content: start;
+       
+    }
+
+    .items{
+        flex-direction: row-reverse;
+        width: 100%;
+    }
+
+    .items__image{
+        height: 100%;
+        width: 50%;
+    }
+
+    .image{
+        border-radius: 0 10px 10px 0;
+    }
+
+    .desktop{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items:center;
+        padding: 60px;
+        width: 50%;
+        height: 100%;
+    }
+
+    .desktop__star{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        
+    }
+
+    .desktop__end{
+        display: flex;
+        color: hsla(0, 0%, 100%, 0.4);
+        gap: 45px;
+        align-self: flex-start;
+        font-family: 'Lexend Deca', sans-serif;
+
+    }
+}
 
